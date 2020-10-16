@@ -3,7 +3,7 @@ Disassembler for C64 - 6502 assembly, outputs in Kick Assembler format.
 
 Requires NodeJS installed
 
-The disassemblewr will attempt to do its best to detect VIC Bank allocation and Screen buffers, adding labels where it thinks they are used. Additionally it will add system labels where detected and provide a syslabels include file.
+The disassembler will attempt to do its best to detect VIC Bank allocation and Screen buffers, adding labels where it thinks they are used. Additionally it will add system labels where detected and provide a syslabels include file.
 
 It will also try to detect and ignore dead code (code that doesnt end in RTI, RTS, JMP, JSR or Branch instructions)
 
