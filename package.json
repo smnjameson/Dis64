@@ -1,0 +1,19 @@
+{
+  "name": "dis64",
+  "version": "1.0.0",
+  "description": "",
+  "main": "./src/process.js",
+  "bin": {
+    "dis64": "./src/process.js"
+  },
+  "preferGlobal": true,
+  "scripts": {
+    "dis64": "node ./src/process.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "ncp": "^2.0.0",
+    "yargs": "^14.2.0"
+  }
+}
