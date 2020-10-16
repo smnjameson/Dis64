@@ -7,43 +7,47 @@ The disassembler will attempt to do its best to detect VIC Bank allocation and S
 
 It will also try to detect and ignore dead code (code that doesnt end in RTI, RTS, JMP, JSR or Branch instructions)
 
-**Setup:
+
+## Setup:
 ```
 npm install
 ```
 
-**Usage:
+
+## Usage:
 ```
 npm run dis64 -- --in %infile% [Options]
 ```
+Note the additional -- IS required in order to pass parameters via NPM
 
-**Parameters:
+
+## Parameters:
 
 
-*--in %File%
+*--in %File%*
 
 The file to disassemble, can be any binary file.
 
-*--out %Folder%
+*--out %Folder%*
 
 The output folder for the disassembly files, if the folder does not exist it wi ll be created.
 
-*--prg
+*--prg*
 
 Signifies that the input file is a PRG and uses its load address to determine the base address for disassembly. Without this flag the disassembly will assume a base address of $0000
 
-*--basic %address%
+*--basic %address%*
 
 If provided will insert a BasicUpstart2 directive into a patched segment pointing to the given address, useful if you know the entry point of the program and that there is free space at $0801 to add a BASIC SYS command. Use JS hex format, e.g. 0x0900.
 
-*--range
+*--range %startAddress-endAddress%*
 
 If provided limits the disassembly to the given memory range, anything falling outside this memory range will be treated as simple byte data. Use JS hex format as follows:
-*--range 0x2000-0xcfff
+*--range 0x2000-0xcfff*
  
 
 
-**Usage Example:
+## Usage Example:
 
 ```
 npm run dis64 -- --in base.prg --prg --out ./MyGame --basic 0xc000
