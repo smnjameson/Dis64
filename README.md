@@ -54,8 +54,8 @@ If provided limits the disassembly to the given memory range, anything falling o
 if provided configures the dissaembly to five the correct System Labels for the computer model provided. Use one of the following options :<br>
 *--model c64*  <-- Defaulted if not provided<BR>
 *--model vic20* <-- Unexpanded VIC20<BR>
-*--model vic203k+* <-- Unexpanded VIC20 with 3K expansion<BR>
-*--model vic208k+* <-- Unexpanded VIC20 with 8k expandion
+*--model vic203k+* <-- VIC20 with 3K expansion<BR>
+*--model vic208k+* <-- VIC20 with 8k expandion
 
 ## Usage Example:
 
