@@ -1,5 +1,5 @@
 # Dis64
-Disassembler for C64 - 6502 assembly, outputs in Kick Assembler format.
+Disassembler for C64 and VIC20 - 6502 assembly, outputs in Kick Assembler format.
 
 Requires NodeJS installed
 
@@ -7,6 +7,10 @@ The disassembler will attempt to do its best to detect VIC Bank allocation and S
 
 It will also try to detect and ignore dead code (code that doesnt end in RTI, RTS, JMP, JSR or Branch instructions)
 
+Change Log
+-
+2020-10-06 : Coded by Shallan50K (https://github.com/smnjameson),<BR>
+2022-03-06 : VIC20 modification by OldSkoolCoder (https://github.com/OldSkoolCoder)
 
 ## Setup:
 ```
@@ -45,11 +49,17 @@ If provided will insert a BasicUpstart2 directive into a patched segment pointin
 If provided limits the disassembly to the given memory range, anything falling outside this memory range will be treated as simple byte data. Use JS hex format as follows:
 *--range 0x2000-0xcfff*
  
+*--model %Commodore Computer Model%*
 
+if provided configures the dissaembly to five the correct System Labels for the computer model provided. Use one of the following options :<br>
+*--model c64*  <-- Defaulted if not provided<BR>
+*--model vic20* <-- Unexpanded VIC20<BR>
+*--model vic203k+* <-- VIC20 with 3K expansion<BR>
+*--model vic208k+* <-- VIC20 with 8k expandion
 
 ## Usage Example:
 
 ```
-npm run dis64 -- --in base.prg --prg --out ./MyGame --basic 0xc000
+npm run dis64 -- --in base.prg --prg --out ./MyGame --basic 0xc000 -- model c64
 ```
 Disassembles a prg file and outputs the results to a folder called MyGame inserting a BasicUpstart2 directive to launch the code from BASIC
